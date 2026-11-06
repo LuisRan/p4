@@ -1,0 +1,9 @@
+// Configuración compartida del proyecto Xcode (igual que la plantilla oficial KMP).
+// TEAM_ID: sólo hace falta para ejecutar en un iPhone real; el simulador no lo necesita.
+TEAM_ID=
+
+PRODUCT_NAME=GestorArchivos
+PRODUCT_BUNDLE_IDENTIFIER=mx.ipn.escom.gestor.GestorArchivos$(TEAM_ID)
+
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0

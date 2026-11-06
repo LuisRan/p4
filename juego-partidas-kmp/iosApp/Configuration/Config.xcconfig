@@ -1,0 +1,9 @@
+// Configuración compartida del proyecto iOS (igual que el template oficial KMP).
+// Para correr en simulador no hace falta equipo de desarrollo. Para un dispositivo real,
+// escribe tu TEAM_ID (Xcode > Signing & Capabilities también sirve).
+TEAM_ID=
+
+PRODUCT_NAME=CircuitoGuinda
+PRODUCT_BUNDLE_IDENTIFIER=mx.ipn.escom.circuito.CircuitoGuinda$(TEAM_ID)
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0

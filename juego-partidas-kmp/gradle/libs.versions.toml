@@ -1,0 +1,23 @@
+[versions]
+# Versiones estables a nov-2026 (Kotlin 2.4.21 soporta Gradle <= 9.7 y AGP 8.5.2 - 9.3.1)
+kotlin = "2.4.21"
+agp = "8.13.2"
+composeMultiplatform = "1.11.1"
+androidx-activityCompose = "1.11.0"
+androidx-core = "1.16.0"
+kotlinx-serialization = "1.12.0"
+compileSdk = "36"
+minSdk = "24"
+targetSdk = "36"
+
+[libraries]
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+      Sin permisos: el espacio propio no los necesita y las carpetas externas se obtienen con
+      el Storage Access Framework (selector del sistema), sin READ/WRITE_EXTERNAL_STORAGE
+      ni MANAGE_EXTERNAL_STORAGE.
+    -->
+    <application
+        android:allowBackup="false"
+        android:label="Gestor de archivos"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Gestor">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboard|keyboardHidden|uiMode|density|fontScale"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- FileProvider: sólo para compartir/abrir archivos del espacio propio de la app. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>
