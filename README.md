@@ -86,7 +86,23 @@ Entorno de desarrollo: macOS, Android Studio 2026.2, Xcode 27.2.
 
 ## Capturas de pantalla
 
-*Pendiente:* las capturas de ejecución en Android e iOS se agregarán en `docs/capturas/` una vez ejecutadas las apps en emulador y simulador.
+### Parte 1: Gestor de archivos, Android (emulador)
+
+| Captura | Descripción |
+|---|---|
+| ![](docs/capturas/android_gestor_01_inicio_azul_oscuro.png) | Inicio, tema **Azul**, modo oscuro |
+| ![](docs/capturas/android_gestor_02_inicio_guinda_oscuro.png) | Inicio, tema **Guinda**, modo oscuro |
+| ![](docs/capturas/android_gestor_05_breadcrumbs.png) | Navegación con *breadcrumbs* en `Ejemplos` |
+| ![](docs/capturas/android_gestor_06_json.png) | Visor JSON con resaltado y formato |
+| ![](docs/capturas/android_gestor_07_xml.png) | Visor XML con resaltado y formato |
+| ![](docs/capturas/android_gestor_08_texto_md.png) | Markdown renderizado |
+| ![](docs/capturas/android_gestor_09_imagen_zoom.png) | Imagen con controles de rotación y zoom |
+| ![](docs/capturas/android_gestor_10_metadatos.png) | Metadatos (la fecha de creación aparece como «No disponible») |
+| ![](docs/capturas/android_gestor_11_no_soportado.png) | Diálogo de formato no soportado (abrir, compartir, exportar) |
+| ![](docs/capturas/android_gestor_13_operaciones.png) | Confirmación antes de eliminar |
+| ![](docs/capturas/android_gestor_12_permiso_selector.png) | Explicación de la finalidad antes de abrir el selector del sistema |
+
+*Pendientes:* gestor en iOS, tema claro y juego en Android e iOS.
 
 ## Pruebas realizadas
 
