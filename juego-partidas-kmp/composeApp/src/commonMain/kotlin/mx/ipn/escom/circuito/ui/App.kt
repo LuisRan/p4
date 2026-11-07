@@ -68,7 +68,7 @@ fun App() {
         AppEnv(repo, settings, progress, platform, controller)
     }
 
-    CircuitoTheme(env.settings.palette) {
+    CircuitoTheme(env.settings.palette, env.settings.appearance) {
         val snackbar = remember { SnackbarHostState() }
         val scope = rememberCoroutineScope()
         val notify: (String) -> Unit = { msg -> scope.launch { snackbar.showSnackbar(msg) } }

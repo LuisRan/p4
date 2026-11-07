@@ -25,7 +25,7 @@ fun App(platform: PlatformServices) {
     LaunchedEffect(state) { state.start() }
 
     // Claro/oscuro según el sistema (se recompone solo cuando el usuario cambia el modo).
-    GestorTheme(state.theme, isSystemInDarkTheme()) {
+    GestorTheme(state.theme, state.appearance.isDark(isSystemInDarkTheme())) {
         Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
             if (!state.ready) {
                 Box(Modifier.fillMaxSize()) { CircularProgressIndicator(Modifier.padding(32.dp)) }

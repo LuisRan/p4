@@ -45,7 +45,12 @@ fun SettingsScreen(env: AppEnv, onBack: () -> Unit) {
                 FilterChip(s.palette == "guinda", { s.update(palette = "guinda") }, label = { Text("Guinda") })
                 FilterChip(s.palette == "azul", { s.update(palette = "azul") }, label = { Text("Azul") })
             }
-            Text("El modo claro/oscuro sigue al sistema.", style = MaterialTheme.typography.bodySmall)
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                listOf("sistema" to "Sistema", "claro" to "Claro", "oscuro" to "Oscuro").forEach { (k, l) ->
+                    FilterChip(s.appearance == k, { s.update(appearance = k) }, label = { Text(l) })
+                }
+            }
+            Text("Sistema (por defecto) sigue automáticamente el modo claro/oscuro del dispositivo.", style = MaterialTheme.typography.bodySmall)
             SwitchRow("Animaciones de giro", s.animations) { s.update(animations = it) }
             SwitchRow("Partículas", s.particles) { s.update(particles = it) }
             SwitchRow("Brillo en tubos energizados", s.glow) { s.update(glow = it) }

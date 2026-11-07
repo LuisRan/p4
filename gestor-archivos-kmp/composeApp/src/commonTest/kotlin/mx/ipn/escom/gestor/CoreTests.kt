@@ -214,4 +214,28 @@ class FileOpsTest {
         assertEquals(n, s.files.size)
         assertTrue(s.files.keys.any { it.endsWith("degradado.png") } && s.files.keys.any { it.endsWith("datos.bin") })
     }
+
+    @Test fun reseedWhenEmptyAndRestoreKeepsExisting() {
+        val s = FakeStore()
+        s.createDirectory("/", "Documentos")
+        assertTrue(SeedData.needsSeed(s, "/Documentos"))
+        SeedData.seed(s, "/Documentos")
+        assertTrue(!SeedData.needsSeed(s, "/Documentos"))
+        val keys = s.files.keys.map { it.substringAfterLast('/') }
+        listOf("nota.txt", "lee_me.md", "alumnos.json", "plan.xml", "degradado.png", "datos.bin").forEach { assertTrue(it in keys, it) }
+        // Restaurar: no pisa ediciones y repone lo borrado.
+        s.writeBytes("/Documentos/Ejemplos/Documentos", "nota.txt", "editado".encodeToByteArray())
+        s.delete("/Documentos/Ejemplos/datos.bin")
+        SeedData.seed(s, "/Documentos")
+        assertEquals("editado", s.files["/Documentos/Ejemplos/Documentos/nota.txt"]!!.decodeToString())
+        assertTrue(s.files.containsKey("/Documentos/Ejemplos/datos.bin"))
+    }
+
+    @Test fun appearanceResolution() {
+        assertEquals(true, mx.ipn.escom.gestor.ui.Appearance.System.isDark(true))
+        assertEquals(false, mx.ipn.escom.gestor.ui.Appearance.System.isDark(false))
+        assertEquals(false, mx.ipn.escom.gestor.ui.Appearance.Light.isDark(true))
+        assertEquals(true, mx.ipn.escom.gestor.ui.Appearance.Dark.isDark(false))
+        assertEquals("sistema", PrefsData().appearance)
+    }
 }

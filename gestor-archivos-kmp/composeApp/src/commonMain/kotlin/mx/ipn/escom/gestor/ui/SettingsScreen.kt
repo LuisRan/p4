@@ -13,7 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import mx.ipn.escom.gestor.core.formatBytes
 
-/** Selector de tema (Guinda/Azul); el modo claro/oscuro lo decide el sistema. */
+/** Tema (Guinda/Azul), apariencia (Sistema/Claro/Oscuro), caché y ejemplos. */
 @Composable
 fun SettingsScreen(state: AppState) {
     var cacheSize by remember { mutableStateOf<Long?>(null) }
@@ -28,8 +28,22 @@ fun SettingsScreen(state: AppState) {
                     TextButton(onClick = { state.setTheme(t) }) { Text(t.label) }
                 }
             }
+            Text("Apariencia", style = MaterialTheme.typography.titleMedium)
+            Appearance.entries.forEach { a ->
+                Row {
+                    RadioButton(selected = state.appearance == a, onClick = { state.setAppearance(a) })
+                    TextButton(onClick = { state.setAppearance(a) }) { Text(a.label) }
+                }
+            }
             Text(
-                "El modo claro u oscuro sigue automáticamente la configuración del sistema.",
+                "Sistema (por defecto) sigue automáticamente el modo claro u oscuro del dispositivo.",
+                style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            HorizontalDivider()
+            Text("Archivos de ejemplo", style = MaterialTheme.typography.titleMedium)
+            OutlinedButton(onClick = { state.restoreSamples() }) { Text("Restaurar archivos de ejemplo") }
+            Text(
+                "Regenera los ejemplos en Documentos de la app sin borrar lo existente.",
                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             HorizontalDivider()

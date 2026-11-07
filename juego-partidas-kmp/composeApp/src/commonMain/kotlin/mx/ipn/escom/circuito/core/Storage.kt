@@ -42,6 +42,7 @@ class AppSettings(store: FileStore? = null) {
     var vibration by mutableStateOf(true); private set
     var difficulty by mutableStateOf(Difficulty.NORMAL); private set
     var palette by mutableStateOf("guinda"); private set   // "guinda" | "azul"
+    var appearance by mutableStateOf("sistema"); private set // "sistema" | "claro" | "oscuro"
     var format by mutableStateOf(SaveFormat.JSON); private set
     var autosave by mutableStateOf(true); private set
     var animations by mutableStateOf(true); private set
@@ -58,6 +59,7 @@ class AppSettings(store: FileStore? = null) {
             glow = m.bool("glow", glow)
             difficulty = m.str("difficulty")?.let { Difficulty.fromId(it) } ?: difficulty
             format = m.str("format")?.let { SaveFormat.fromExtension(it) } ?: format
+            appearance = m.str("appearance")?.takeIf { it == "claro" || it == "oscuro" } ?: "sistema"
             palette = if (m.str("palette") == "azul") "azul" else "guinda"
         }
     }
@@ -67,8 +69,9 @@ class AppSettings(store: FileStore? = null) {
         difficulty: Difficulty = this.difficulty, palette: String = this.palette,
         format: SaveFormat = this.format, autosave: Boolean = this.autosave,
         animations: Boolean = this.animations, particles: Boolean = this.particles,
-        glow: Boolean = this.glow,
+        glow: Boolean = this.glow, appearance: String = this.appearance,
     ) {
+        this.appearance = appearance
         this.sound = sound; this.vibration = vibration; this.difficulty = difficulty
         this.palette = palette; this.format = format; this.autosave = autosave
         this.animations = animations; this.particles = particles; this.glow = glow
@@ -78,7 +81,7 @@ class AppSettings(store: FileStore? = null) {
                 "difficulty" to JsonPrimitive(difficulty.id), "palette" to JsonPrimitive(palette),
                 "format" to JsonPrimitive(format.extension), "autosave" to JsonPrimitive(autosave),
                 "animations" to JsonPrimitive(animations), "particles" to JsonPrimitive(particles),
-                "glow" to JsonPrimitive(glow),
+                "glow" to JsonPrimitive(glow), "appearance" to JsonPrimitive(appearance),
             ),
         )
     }

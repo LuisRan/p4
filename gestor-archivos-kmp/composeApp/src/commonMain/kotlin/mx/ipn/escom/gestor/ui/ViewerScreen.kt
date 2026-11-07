@@ -7,7 +7,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.detectTransformGestures
-import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -118,7 +118,7 @@ private fun TextViewer(l: Loaded.Text, kind: ViewerKind) {
     val canFormat = kind == ViewerKind.Json || kind == ViewerKind.Xml
     var formatted by remember { mutableStateOf(true) }
     var rendered by remember { mutableStateOf(true) }
-    val dark = isSystemInDarkTheme()
+    val dark = MaterialTheme.colorScheme.background.luminance() < 0.5f
 
     Column(Modifier.fillMaxSize()) {
         if (l.truncated) {

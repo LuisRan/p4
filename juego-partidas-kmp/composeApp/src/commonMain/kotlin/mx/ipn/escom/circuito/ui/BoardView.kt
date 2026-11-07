@@ -182,7 +182,7 @@ fun BoardView(controller: GameController, fx: BoardFx, glow: Boolean, modifier: 
                 drawCircle(if (isOn) on else off, w * 0.9f, center)
                 if (i == state.source) {
                     drawCircle(sourceRing, cell * 0.2f, center, style = Stroke(cell * 0.05f))
-                    drawCircle(Color.White, cell * 0.09f, center)
+                    drawCircle(cs.onSurface, cell * 0.09f, center)
                 }
             }
         }

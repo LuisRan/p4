@@ -13,12 +13,12 @@ Gestor de archivos para Android (minSdk 24) e iOS (15.0+) escrito en **Kotlin Mu
 - Visores: txt/log/csv/yml..., Markdown (renderizado propio o fuente), JSON y XML con *pretty print* y resaltado propio (`AnnotatedString`), imágenes con zoom/arrastre (gestos), doble toque y rotación de 90 grados.
 - Formatos no soportados: diálogo con **Abrir con…**, **Compartir** y **Exportar…** (selector del sistema).
 - Metadatos: nombre, tamaño, modificación, creación (si existe), MIME y UTType; "No disponible" cuando falta.
-- Temas **Guinda** (#6A1B3A, IPN) y **Azul** (#0B3C8C, ESCOM); claro/oscuro automático (`isSystemInDarkTheme`) y selector en Ajustes.
+- Temas **Guinda** (#6A1B3A, IPN) y **Azul** (#0B3C8C, ESCOM); selector de **Apariencia** en Ajustes: Sistema (por defecto, sigue al SO automáticamente), Claro u Oscuro, persistido en prefs. Colores del visor y resaltado adaptados a fondo oscuro.
 - UI adaptativa: ancho >= 720 dp -> `NavigationRail` + cuadrícula; estrecho -> `NavigationBar` + lista (portrait y landscape).
 - Recientes (máx. 20) y favoritos persistentes. Caché de miniaturas. Copiar/mover/renombrar/eliminar/crear carpeta/importar con confirmación, validaciones y barra de progreso.
 - Errores tipificados (`FailureKind`: ruta no disponible, permiso revocado, inexistente, lectura fallida, sin espacio, nombre inválido, no permitido) mostrados con Snackbar o pantalla con reintento; nunca cierran la app.
 - Antes del selector de carpetas se muestra un diálogo con la finalidad del acceso.
-- Datos de ejemplo en el primer arranque: `Documentos de la app/Ejemplos/` (txt, md, json, xml, png generada en código, bin).
+- Datos de ejemplo en el primer arranque: `Documentos de la app/Ejemplos/` (txt, md, json, xml, png generada en código, bin). Se resiembra si Documentos queda vacío, y Ajustes tiene **Restaurar archivos de ejemplo** (regenera lo faltante sin borrar nada); los errores de siembra se muestran en snackbar.
 
 ## Arquitectura: compartido vs específico
 ```

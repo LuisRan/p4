@@ -17,6 +17,17 @@ enum class AppTheme(val key: String, val label: String) {
     }
 }
 
+/** Apariencia: Sistema sigue automáticamente al SO (por defecto). */
+enum class Appearance(val key: String, val label: String) {
+    System("sistema", "Sistema"), Light("claro", "Claro"), Dark("oscuro", "Oscuro");
+
+    fun isDark(systemDark: Boolean) = when (this) { System -> systemDark; Light -> false; Dark -> true }
+
+    companion object {
+        fun fromKey(key: String) = entries.firstOrNull { it.key == key } ?: System
+    }
+}
+
 private fun c(hex: Long) = Color(0xFF000000 or hex)
 
 private val guindaLight = lightColorScheme(

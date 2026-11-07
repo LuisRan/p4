@@ -39,8 +39,11 @@ fun schemeFor(seed: Color, dark: Boolean): ColorScheme =
         outline = Color(0xFF948F94), error = Color(0xFFF2B8B5),
     )
 
-/** Tema de la app: paleta Guinda/Azul y modo claro/oscuro según el sistema. */
+/** Resuelve la apariencia: "sistema" sigue al SO; "claro"/"oscuro" fuerzan el modo. */
+fun isDarkFor(appearance: String, systemDark: Boolean) = when (appearance) { "claro" -> false; "oscuro" -> true; else -> systemDark }
+
+/** Tema de la app: paleta Guinda/Azul y apariencia (Sistema por defecto, Claro u Oscuro). */
 @Composable
-fun CircuitoTheme(palette: String, content: @Composable () -> Unit) {
-    MaterialTheme(colorScheme = schemeFor(seedOf(palette), isSystemInDarkTheme()), content = content)
+fun CircuitoTheme(palette: String, appearance: String, content: @Composable () -> Unit) {
+    MaterialTheme(colorScheme = schemeFor(seedOf(palette), isDarkFor(appearance, isSystemInDarkTheme())), content = content)
 }

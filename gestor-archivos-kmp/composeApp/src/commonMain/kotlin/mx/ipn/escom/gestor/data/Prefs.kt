@@ -22,6 +22,8 @@ data class PrefsData(
     val favorites: List<SavedItem> = emptyList(),
     val recents: List<SavedItem> = emptyList(),
     val theme: String = "guinda",
+    /** "sistema" (por defecto), "claro" u "oscuro". */
+    val appearance: String = "sistema",
     val roots: List<SavedRoot> = emptyList(),
     val seeded: Boolean = false,
 ) {

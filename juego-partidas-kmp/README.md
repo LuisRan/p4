@@ -34,7 +34,7 @@ Tablero de losetas con tubos (recta, codo, T, cruz, extremo). La loseta con núc
 - **Continuar**: autoguardado (`auto/autosave.json`) tras cada movimiento y al salir de la pantalla.
 - Efectos: giro animado con rebote, brillo pulsante en tubos energizados, partículas en Canvas al
   conectar y al ganar; sonidos WAV **sintetizados en memoria** (sin assets) y vibración/haptics.
-- Temas **Guinda (#6A1B3A)** y **Azul (#0B3C8C)**, claro/oscuro automático según el sistema. UI responsiva (vertical/horizontal, tablet).
+- Temas **Guinda (#6A1B3A)** y **Azul (#0B3C8C)**, selector de **Apariencia** en Ajustes: Sistema (por defecto, sigue al SO automáticamente), Claro u Oscuro, persistido en settings.json. Tablero y losetas usan colores del tema (legibles en oscuro). UI responsiva (vertical/horizontal, tablet).
 
 ## Arquitectura
 

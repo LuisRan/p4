@@ -68,28 +68,47 @@ class AppState(
     var progress by mutableStateOf<Progress?>(null); private set
 
     val theme: AppTheme get() = AppTheme.fromKey(prefs.theme)
+    val appearance: Appearance get() = Appearance.fromKey(prefs.appearance)
     val currentDir: Crumb? get() = trail.lastOrNull()
 
     // ---------- arranque ----------
 
     /** Carga preferencias, siembra datos de ejemplo la primera vez y resuelve las raíces. */
     fun start() = scope.launch {
+        var seedError: Throwable? = null
         try {
             withContext(Dispatchers.Default) {
                 var p = prefsStore.load()
-                if (!p.seeded) {
-                    try { SeedData.seed(store, platform.internalRoots.first().id) } catch (_: Exception) { /* sin ejemplos, la app sigue */ }
-                    p = p.copy(seeded = true)
-                    prefsStore.save(p)
+                // Se siembra si es el primer arranque O si Documentos está vacío (no depende solo del flag).
+                val docs = platform.internalRoots.first().id
+                if (!p.seeded || SeedData.needsSeed(store, docs)) {
+                    try {
+                        SeedData.seed(store, docs)
+                        p = p.copy(seeded = true)
+                        prefsStore.save(p)
+                    } catch (e: Throwable) {
+                        if (e is CancellationException) throw e
+                        seedError = e
+                    }
                 }
                 prefs = p
             }
+            seedError?.let { report(it) }
             refreshRoots()
         } catch (e: Throwable) {
             if (e is CancellationException) throw e
             report(e)
         }
         ready = true
+    }
+
+    /** Regenera los archivos de ejemplo faltantes en Documentos sin borrar nada. */
+    fun restoreSamples() {
+        val docs = platform.internalRoots.first()
+        background({ SeedData.seed(store, docs.id) }, onOk = {
+            message("Archivos de ejemplo restaurados en ${docs.name}")
+            if (trail.isNotEmpty()) reload()
+        })
     }
 
     private fun refreshRoots() {
@@ -207,6 +226,7 @@ class AppState(
     fun removeRecent(id: String) = updatePrefs { it.copy(recents = it.recents.filterNot { r -> r.id == id }) }
     fun clearRecents() = updatePrefs { it.copy(recents = emptyList()) }
     fun setTheme(t: AppTheme) = updatePrefs { it.copy(theme = t.key) }
+    fun setAppearance(a: Appearance) = updatePrefs { it.copy(appearance = a.key) }
 
     // ---------- carpetas externas ----------
 

@@ -4,6 +4,11 @@ import mx.ipn.escom.gestor.core.PngEncoder
 
 /** Datos de ejemplo del primer arranque (txt, md, json, xml, png, bin). Idempotente. */
 object SeedData {
+    /** true si [documentsRoot] no contiene nada (o no se puede listar): hay que (re)sembrar. */
+    fun needsSeed(store: FileStore, documentsRoot: String): Boolean =
+        try { store.list(documentsRoot).isEmpty() } catch (_: Exception) { true }
+
+    /** Crea las carpetas y archivos de ejemplo que falten; nunca borra ni pisa lo existente. */
     fun seed(store: FileStore, documentsRoot: String) {
         val base = store.createDirectory(documentsRoot, "Ejemplos")
         val docs = store.createDirectory(base, "Documentos")
@@ -12,13 +17,14 @@ object SeedData {
         fun w(dir: String, name: String, bytes: ByteArray) {
             if (!store.exists(dir, name)) store.writeBytes(dir, name, bytes)
         }
+        w(base, "LEEME.txt", NOTE.encodeToByteArray())
         w(docs, "nota.txt", NOTE.encodeToByteArray())
         w(docs, "lee_me.md", MD.encodeToByteArray())
         w(docs, "alumnos.json", JSON.encodeToByteArray())
         w(docs, "plan.xml", XML.encodeToByteArray())
-        // Imagen 256x256 generada en código: degradado guinda -> azul.
-        w(media, "degradado.png", PngEncoder.encode(256, 256) { x, y ->
-            val t = x / 255.0
+        // Imagen 480x320 generada en código: degradado guinda -> azul.
+        w(media, "degradado.png", PngEncoder.encode(480, 320) { x, y ->
+            val t = x / 479.0
             val r = (0x6A + (0x0B - 0x6A) * t).toInt()
             val g = (0x1B + (0x3C - 0x1B) * t).toInt()
             val b = (0x3A + (0x8C - 0x3A) * t).toInt()

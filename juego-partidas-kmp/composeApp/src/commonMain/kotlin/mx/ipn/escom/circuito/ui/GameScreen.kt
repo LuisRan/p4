@@ -56,7 +56,7 @@ fun GameScreen(
     var showSave by remember { mutableStateOf(false) }
     var menu by remember { mutableStateOf(false) }
     var resultDismissed by remember(gameKey) { mutableStateOf(false) }
-    val partColors = listOf(MaterialTheme.colorScheme.tertiary, MaterialTheme.colorScheme.primary, Color.White, Color(0xFFFFD54F))
+    val partColors = listOf(MaterialTheme.colorScheme.tertiary, MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.onSurface, Color(0xFFFFD54F))
 
     // Conecta los callbacks de efectos del controlador con la UI de esta partida.
     DisposableEffect(gameKey, settings.particles, settings.animations) {
