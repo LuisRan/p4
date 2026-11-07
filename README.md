@@ -92,6 +92,7 @@ Entorno de desarrollo: macOS, Android Studio 2026.2, Xcode 27.2.
 |---|---|
 | ![](docs/capturas/android_gestor_01_inicio_azul_oscuro.png) | Inicio, tema **Azul**, modo oscuro |
 | ![](docs/capturas/android_gestor_02_inicio_guinda_oscuro.png) | Inicio, tema **Guinda**, modo oscuro |
+| ![](docs/capturas/android_gestor_03_inicio_azul_claro.png) | Inicio, tema **Azul**, modo claro |
 | ![](docs/capturas/android_gestor_05_breadcrumbs.png) | Navegación con *breadcrumbs* en `Ejemplos` |
 | ![](docs/capturas/android_gestor_06_json.png) | Visor JSON con resaltado y formato |
 | ![](docs/capturas/android_gestor_07_xml.png) | Visor XML con resaltado y formato |
@@ -102,7 +103,7 @@ Entorno de desarrollo: macOS, Android Studio 2026.2, Xcode 27.2.
 | ![](docs/capturas/android_gestor_13_operaciones.png) | Confirmación antes de eliminar |
 | ![](docs/capturas/android_gestor_12_permiso_selector.png) | Explicación de la finalidad antes de abrir el selector del sistema |
 
-*Pendientes:* gestor en iOS, tema claro y juego en Android e iOS.
+*Pendientes:* gestor en iOS, tema Guinda en modo claro y juego en Android e iOS.
 
 ## Pruebas realizadas
 
