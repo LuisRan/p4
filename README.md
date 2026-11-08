@@ -103,7 +103,16 @@ Entorno de desarrollo: macOS, Android Studio 2026.2, Xcode 27.2.
 | ![](docs/capturas/android_gestor_13_operaciones.png) | Confirmación antes de eliminar |
 | ![](docs/capturas/android_gestor_12_permiso_selector.png) | Explicación de la finalidad antes de abrir el selector del sistema |
 
-*Pendientes:* gestor en iOS, tema Guinda en modo claro y juego en Android e iOS.
+### Parte 1: Gestor de archivos, iOS (simulador, iPad en horizontal)
+
+| Captura | Descripción |
+|---|---|
+| ![](docs/capturas/ios_gestor_06_json.png) | Visor JSON con resaltado y formato, modo oscuro |
+| ![](docs/capturas/ios_gestor_07_xml.png) | Visor XML con resaltado y formato |
+| ![](docs/capturas/ios_gestor_08_texto_md.png) | Markdown renderizado |
+| ![](docs/capturas/ios_gestor_08_texto_txt.png) | Archivo de texto plano |
+
+*Pendientes:* resto de capturas del gestor en iOS (inicio, temas, metadatos, imagen, diálogos), tema Guinda en modo claro y juego en Android e iOS.
 
 ## Pruebas realizadas
 
