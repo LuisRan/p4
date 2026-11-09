@@ -68,7 +68,7 @@ private class IosFileStore : FileStore {
 
     override fun write(dir: String, name: String, content: String) {
         // atomically = true: Foundation escribe a un temporal y renombra.
-        val ok = (content as NSString).writeToFile("${dir(dir)}/$name", true, NSUTF8StringEncoding, null)
+        val ok = NSString.create(string = content).writeToFile("${dir(dir)}/$name", true, NSUTF8StringEncoding, null)
         if (!ok) throw SaveIoException("No se pudo escribir \"$name\".")
     }
 
@@ -90,7 +90,7 @@ private fun topViewController(): UIViewController? {
 
 private fun writeTemp(name: String, content: String): NSURL? {
     val path = NSTemporaryDirectory() + name
-    val ok = (content as NSString).writeToFile(path, true, NSUTF8StringEncoding, null)
+    val ok = NSString.create(string = content).writeToFile(path, true, NSUTF8StringEncoding, null)
     return if (ok) NSURL.fileURLWithPath(path) else null
 }
 
@@ -135,10 +135,9 @@ private class IosPlatform : PlatformServices {
     }
 
     private fun present(picker: UIDocumentPickerViewController, onPick: (NSURL?) -> Unit) {
-        val d = PickerDelegate(onPick) { }
         // La referencia fuerte evita que el delegado se libere (UIKit solo guarda una débil).
-        delegates.add(d)
-        val wrapped = PickerDelegate({ u -> onPick(u) }) { delegates.remove(d) }
+        lateinit var wrapped: PickerDelegate
+        wrapped = PickerDelegate(onPick) { delegates.remove(wrapped) }
         delegates.add(wrapped)
         picker.delegate = wrapped
         topViewController()?.presentViewController(picker, true, null) ?: onPick(null)

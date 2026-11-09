@@ -119,7 +119,25 @@ Entorno de desarrollo: macOS, Android Studio 2026.2, Xcode 27.2.
 | ![](docs/capturas/ios_gestor_11_no_soportado.png) | Diálogo de formato no soportado |
 | ![](docs/capturas/ios_gestor_13_operaciones.png) | Confirmación antes de eliminar |
 
-*Pendientes:* metadatos y selector del sistema en iOS, tema Guinda en modo claro y juego en Android e iOS.
+### Parte 2: Circuito Guinda, iOS (simulador, iPad en horizontal)
+
+| Captura | Descripción |
+|---|---|
+| ![](docs/capturas/ios_juego_02_menu_guinda_claro.png) | Menú principal, tema **Guinda**, modo claro |
+| ![](docs/capturas/ios_juego_01_menu_guinda_oscuro.png) | Menú principal, tema **Guinda**, modo oscuro |
+| ![](docs/capturas/ios_juego_03_menu_azul_claro.png) | Menú principal, tema **Azul**, modo claro |
+| ![](docs/capturas/ios_juego_04_menu_azul_oscuro.png) | Menú principal, tema **Azul**, modo oscuro |
+| ![](docs/capturas/ios_juego_05_partida_clasico.png) | Partida en modo Clásico (puntos, tiempo, movimientos, losetas conectadas) |
+| ![](docs/capturas/ios_juego_06_partida_reto.png) | Partida en modo Reto, con límite de movimientos (0/50) |
+| ![](docs/capturas/ios_juego_07_victoria.png) | Nivel completado, con puntuación, movimientos y tiempo |
+| ![](docs/capturas/ios_juego_08_opciones.png) | Ajustes: formato de guardado, apariencia (tema y modo), jugabilidad, sonido y vibración |
+| ![](docs/capturas/ios_juego_09_guardar_partida.png) | Guardar partida: nombre, etiquetas y formato TXT/XML/JSON |
+| ![](docs/capturas/ios_juego_10_visor_json.png) | Visor del archivo de guardado en JSON |
+| ![](docs/capturas/ios_juego_13_lista_error_importar.png) | Lista de partidas con metadatos; el error legible al importar un archivo inválido no afecta la partida existente |
+| ![](docs/capturas/ios_juego_12_etiquetas.png) | Edición de etiquetas |
+| ![](docs/capturas/ios_juego_11_exportar.png) | Exportar o compartir una partida |
+
+*Pendientes:* metadatos y selector del sistema del gestor en iOS, tema Guinda del gestor en modo claro, visores TXT y XML del juego, y todas las capturas en Android del juego.
 
 ## Pruebas realizadas
 
