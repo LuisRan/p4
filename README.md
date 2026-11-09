@@ -107,12 +107,19 @@ Entorno de desarrollo: macOS, Android Studio 2026.2, Xcode 27.2.
 
 | Captura | Descripción |
 |---|---|
-| ![](docs/capturas/ios_gestor_06_json.png) | Visor JSON con resaltado y formato, modo oscuro |
+| ![](docs/capturas/ios_gestor_01_inicio_azul_oscuro.png) | Inicio, tema **Azul**, modo oscuro (navegación lateral en pantalla ancha) |
+| ![](docs/capturas/ios_gestor_02_inicio_guinda_oscuro.png) | Inicio, tema **Guinda**, modo oscuro |
+| ![](docs/capturas/ios_gestor_05_breadcrumbs.png) | *Breadcrumbs* y cuadrícula de archivos |
+| ![](docs/capturas/ios_gestor_14_menu_acciones.png) | Menú de acciones (abrir, favoritos, copiar, mover, renombrar, eliminar, detalles, compartir) |
+| ![](docs/capturas/ios_gestor_06_json.png) | Visor JSON con resaltado y formato |
 | ![](docs/capturas/ios_gestor_07_xml.png) | Visor XML con resaltado y formato |
 | ![](docs/capturas/ios_gestor_08_texto_md.png) | Markdown renderizado |
 | ![](docs/capturas/ios_gestor_08_texto_txt.png) | Archivo de texto plano |
+| ![](docs/capturas/ios_gestor_09_imagen_zoom.png) | Imagen con controles de rotación y zoom |
+| ![](docs/capturas/ios_gestor_11_no_soportado.png) | Diálogo de formato no soportado |
+| ![](docs/capturas/ios_gestor_13_operaciones.png) | Confirmación antes de eliminar |
 
-*Pendientes:* resto de capturas del gestor en iOS (inicio, temas, metadatos, imagen, diálogos), tema Guinda en modo claro y juego en Android e iOS.
+*Pendientes:* metadatos y selector del sistema en iOS, tema Guinda en modo claro y juego en Android e iOS.
 
 ## Pruebas realizadas
 
