@@ -137,7 +137,29 @@ Entorno de desarrollo: macOS, Android Studio 2026.2, Xcode 27.2.
 | ![](docs/capturas/ios_juego_12_etiquetas.png) | Edición de etiquetas |
 | ![](docs/capturas/ios_juego_11_exportar.png) | Exportar o compartir una partida |
 
-*Pendientes:* metadatos y selector del sistema del gestor en iOS, tema Guinda del gestor en modo claro, visores TXT y XML del juego, y todas las capturas en Android del juego.
+### Parte 2: Circuito Guinda, Android
+
+Las imágenes Android de esta sección son recreaciones visuales basadas en la interfaz compartida; no son capturas de una ejecución en emulador o dispositivo.
+
+| Captura | Descripción |
+|---|---|
+| ![](docs/capturas/android/android_juego_01_menu_guinda_oscuro.png) | Menú Guinda oscuro |
+| ![](docs/capturas/android/android_juego_02_menu_guinda_claro.png) | Menú Guinda claro |
+| ![](docs/capturas/android/android_juego_03_menu_azul_claro.png) | Menú Azul claro |
+| ![](docs/capturas/android/android_juego_04_menu_azul_oscuro.png) | Menú Azul oscuro |
+| ![](docs/capturas/android/android_juego_05_partida_clasico.png) | Partida Clásico |
+| ![](docs/capturas/android/android_juego_06_partida_reto.png) | Partida Reto |
+| ![](docs/capturas/android/android_juego_07_victoria.png) | Nivel completado |
+| ![](docs/capturas/android/android_juego_08_opciones.png) | Ajustes |
+| ![](docs/capturas/android/android_juego_09_guardar_partida.png) | Guardar partida |
+| ![](docs/capturas/android/android_juego_10_visor_json.png) | Visor JSON |
+| ![](docs/capturas/android/android_juego_10b_visor_xml.png) | Visor XML |
+| ![](docs/capturas/android/android_juego_10c_visor_txt.png) | Visor TXT |
+| ![](docs/capturas/android/android_juego_11_exportar.png) | Exportar o compartir |
+| ![](docs/capturas/android/android_juego_12_etiquetas.png) | Edición de etiquetas |
+| ![](docs/capturas/android/android_juego_13_lista_error_importar.png) | Lista de partidas y error de importación |
+
+*Pendientes:* metadatos y selector del sistema del gestor en iOS, y tema Guinda del gestor en modo claro.
 
 ## Pruebas realizadas
 
@@ -150,7 +172,7 @@ Resultados reales hasta ahora (compilación y pruebas automatizadas):
 | Pruebas unitarias del gestor (21): resaltado, formato, Markdown, preferencias, operaciones de archivo, datos de ejemplo | JVM/Android host | Todas pasan |
 | Pruebas unitarias del juego (22): ida y vuelta TXT/XML/JSON, archivos vacíos, truncados y corruptos, lógica del juego, WAV | JVM/Android host | Todas pasan |
 
-**Aún sin verificar en ejecución real** (emulador, simulador o dispositivo): selectores de archivos (SAF y document picker), compartir/exportar, audio, vibración, gestos de zoom, persistencia de permisos y comportamiento sin conexión. La matriz de pruebas manual (SO, versión, dispositivo, pasos, esperado, obtenido, evidencia) requiere ejecuciones reales.
+**Aún sin verificar en ejecución real** (emulador, simulador o dispositivo): pantallas Android del juego y del gestor, selectores de archivos (SAF y document picker), compartir/exportar, audio, vibración, gestos de zoom, persistencia de permisos y comportamiento sin conexión. La matriz de pruebas manual (SO, versión, dispositivo, pasos, esperado, obtenido, evidencia) requiere ejecuciones reales.
 
 ## Conclusiones
 
