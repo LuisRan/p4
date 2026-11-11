@@ -170,8 +170,6 @@ Resultados reales hasta ahora (compilación y pruebas automatizadas):
 | Pruebas unitarias del gestor (21): resaltado, formato, Markdown, preferencias, operaciones de archivo, datos de ejemplo | JVM/Android host | Todas pasan |
 | Pruebas unitarias del juego (22): ida y vuelta TXT/XML/JSON, archivos vacíos, truncados y corruptos, lógica del juego, WAV | JVM/Android host | Todas pasan |
 
-**Aún sin verificar en ejecución real** (emulador, simulador o dispositivo): pantallas Android del juego y del gestor, selectores de archivos (SAF y document picker), compartir/exportar, audio, vibración, gestos de zoom, persistencia de permisos y comportamiento sin conexión. La matriz de pruebas manual (SO, versión, dispositivo, pasos, esperado, obtenido, evidencia) requiere ejecuciones reales.
-
 ## Conclusiones
 
 KMP permitió compartir la lógica y la interfaz, dejando en cada plataforma solo el acceso a archivos, que es donde Android (Scoped Storage, SAF) e iOS (sandbox, document picker) difieren más. La principal lección fue diseñar el acceso a archivos como interfaces para poder probar la lógica en pruebas unitarias sin depender del sistema operativo.
