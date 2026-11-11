@@ -90,19 +90,18 @@ Entorno de desarrollo: macOS, Android Studio 2026.2, Xcode 27.2.
 
 | Captura | Descripción |
 |---|---|
-| ![](docs/capturas/android/android_gestor_01_inicio_azul_oscuro.png) | Inicio, tema **Azul**, modo oscuro |
-| ![](docs/capturas/android/android_gestor_02_inicio_guinda_oscuro.png) | Inicio, tema **Guinda**, modo oscuro |
-| ![](docs/capturas/android/android_gestor_03_inicio_azul_claro.png) | Inicio, tema **Azul**, modo claro |
-| ![](docs/capturas/android/android_gestor_05_breadcrumbs.png) | Breadcrumbs en Ejemplos |
-| ![](docs/capturas/android/android_gestor_06_json.png) | Visor JSON |
-| ![](docs/capturas/android/android_gestor_07_xml.png) | Visor XML |
-| ![](docs/capturas/android/android_gestor_08_texto_md.png) | Visor Markdown |
-| ![](docs/capturas/android/android_gestor_09_imagen_zoom.png) | Visor de imagen |
-| ![](docs/capturas/android/android_gestor_10_metadatos.png) | Metadatos |
-| ![](docs/capturas/android/android_gestor_11_no_soportado.png) | Formato no soportado |
-| ![](docs/capturas/android/android_gestor_13_operaciones.png) | Confirmación de eliminación |
-| ![](docs/capturas/android/android_gestor_12_permiso_selector.png) | Acceso a carpeta |
-| ![](docs/capturas/android/android_gestor_14_ajustes.png) | Ajustes |
+| ![](docs/capturas/android_gestor_01_inicio_azul_oscuro.png) | Inicio, tema **Azul**, modo oscuro |
+| ![](docs/capturas/android_gestor_02_inicio_guinda_oscuro.png) | Inicio, tema **Guinda**, modo oscuro |
+| ![](docs/capturas/android_gestor_03_inicio_azul_claro.png) | Inicio, tema **Azul**, modo claro |
+| ![](docs/capturas/android_gestor_05_breadcrumbs.png) | Breadcrumbs en Ejemplos |
+| ![](docs/capturas/android_gestor_06_json.png) | Visor JSON |
+| ![](docs/capturas/android_gestor_07_xml.png) | Visor XML |
+| ![](docs/capturas/android_gestor_08_texto_md.png) | Visor Markdown |
+| ![](docs/capturas/android_gestor_09_imagen_zoom.png) | Visor de imagen |
+| ![](docs/capturas/android_gestor_10_metadatos.png) | Metadatos |
+| ![](docs/capturas/android_gestor_11_no_soportado.png) | Formato no soportado |
+| ![](docs/capturas/android_gestor_13_operaciones.png) | Confirmación de eliminación |
+| ![](docs/capturas/android_gestor_12_permiso_selector.png) | Acceso a carpeta |
 
 ### Parte 1: Gestor de archivos, iOS (simulador, iPad en horizontal)
 
