@@ -143,21 +143,21 @@ Las imágenes Android de esta sección son recreaciones visuales basadas en la i
 
 | Captura | Descripción |
 |---|---|
-| ![](docs/capturas/android/android_juego_01_menu_guinda_oscuro.png) | Menú Guinda oscuro |
-| ![](docs/capturas/android/android_juego_02_menu_guinda_claro.png) | Menú Guinda claro |
-| ![](docs/capturas/android/android_juego_03_menu_azul_claro.png) | Menú Azul claro |
-| ![](docs/capturas/android/android_juego_04_menu_azul_oscuro.png) | Menú Azul oscuro |
-| ![](docs/capturas/android/android_juego_05_partida_clasico.png) | Partida Clásico |
-| ![](docs/capturas/android/android_juego_06_partida_reto.png) | Partida Reto |
-| ![](docs/capturas/android/android_juego_07_victoria.png) | Nivel completado |
-| ![](docs/capturas/android/android_juego_08_opciones.png) | Ajustes |
-| ![](docs/capturas/android/android_juego_09_guardar_partida.png) | Guardar partida |
-| ![](docs/capturas/android/android_juego_10_visor_json.png) | Visor JSON |
-| ![](docs/capturas/android/android_juego_10b_visor_xml.png) | Visor XML |
-| ![](docs/capturas/android/android_juego_10c_visor_txt.png) | Visor TXT |
-| ![](docs/capturas/android/android_juego_11_exportar.png) | Exportar o compartir |
-| ![](docs/capturas/android/android_juego_12_etiquetas.png) | Edición de etiquetas |
-| ![](docs/capturas/android/android_juego_13_lista_error_importar.png) | Lista de partidas y error de importación |
+| ![](docs/capturas/android/android_juego_01_menu_guinda_oscuro.png) | Imagen de Menú Guinda oscuro - simulación |
+| ![](docs/capturas/android/android_juego_02_menu_guinda_claro.png) | Imagen de Menú Guinda claro - simulación |
+| ![](docs/capturas/android/android_juego_03_menu_azul_claro.png) | Imagen de Menú Azul claro - simulación |
+| ![](docs/capturas/android/android_juego_04_menu_azul_oscuro.png) | Imagen de Menú Azul oscuro - simulación |
+| ![](docs/capturas/android/android_juego_05_partida_clasico.png) | Imagen de Partida Clásico - simulación |
+| ![](docs/capturas/android/android_juego_06_partida_reto.png) | Imagen de Partida Reto - simulación |
+| ![](docs/capturas/android/android_juego_07_victoria.png) | Imagen de Nivel completado - simulación |
+| ![](docs/capturas/android/android_juego_08_opciones.png) | Imagen de Ajustes - simulación |
+| ![](docs/capturas/android/android_juego_09_guardar_partida.png) | Imagen de Guardar partida - simulación |
+| ![](docs/capturas/android/android_juego_10_visor_json.png) | Imagen de Visor JSON - simulación |
+| ![](docs/capturas/android/android_juego_10b_visor_xml.png) | Imagen de Visor XML - simulación |
+| ![](docs/capturas/android/android_juego_10c_visor_txt.png) | Imagen de Visor TXT - simulación |
+| ![](docs/capturas/android/android_juego_11_exportar.png) | Imagen de Exportar o compartir - simulación |
+| ![](docs/capturas/android/android_juego_12_etiquetas.png) | Imagen de Edición de etiquetas - simulación |
+| ![](docs/capturas/android/android_juego_13_lista_error_importar.png) | Imagen de Lista de partidas y error de importación - simulación |
 
 *Pendientes:* metadatos y selector del sistema del gestor en iOS, y tema Guinda del gestor en modo claro.
 
