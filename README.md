@@ -65,7 +65,7 @@ Se eligió KMP (y no Flutter) para que el proyecto abra y corra en Android Studi
 ## Implementación
 
 - **Arquitectura compartida:** casi toda la lógica y la UI están en `commonMain` (Kotlin + Compose Multiplatform). Las operaciones de plataforma se inyectan mediante interfaces (`FileStore`, `PlatformServices`) y `expect/actual` para fecha, imágenes y miniaturas.
-- **Android:** Storage Access Framework (`ACTION_OPEN_DOCUMENT_TREE`, `ACTION_CREATE_DOCUMENT`, permisos URI persistentes), `FileProvider` y *Intent chooser* para compartir. Sin permisos de almacenamiento global (Scoped Storage).
+- **Android:** Storage Access Framework (`ACTION_OPEN_DOCUMENT_TREE`, `ACTION_CREATE_DOCUMENT`, permisos URI persistentes), `FileProvider` e *Intent chooser* para compartir. Sin permisos de almacenamiento global (Scoped Storage).
 - **iOS:** sandbox de la app, `UIDocumentPickerViewController` con URLs *security-scoped* y `UIActivityViewController` para compartir.
 - **Serialización (juego):** TXT (clave=valor), XML y JSON (kotlinx-serialization) con versión de esquema y excepciones propias para validar.
 - **Persistencia:** archivos en el directorio privado de la app (partidas en `saves/`, preferencias en JSON).
@@ -86,22 +86,23 @@ Entorno de desarrollo: macOS, Android Studio 2026.2, Xcode 27.2.
 
 ## Capturas de pantalla
 
-### Parte 1: Gestor de archivos, Android (emulador)
+### Parte 1: Gestor de archivos, Android
 
 | Captura | Descripción |
 |---|---|
-| ![](docs/capturas/android_gestor_01_inicio_azul_oscuro.png) | Inicio, tema **Azul**, modo oscuro |
-| ![](docs/capturas/android_gestor_02_inicio_guinda_oscuro.png) | Inicio, tema **Guinda**, modo oscuro |
-| ![](docs/capturas/android_gestor_03_inicio_azul_claro.png) | Inicio, tema **Azul**, modo claro |
-| ![](docs/capturas/android_gestor_05_breadcrumbs.png) | Navegación con *breadcrumbs* en `Ejemplos` |
-| ![](docs/capturas/android_gestor_06_json.png) | Visor JSON con resaltado y formato |
-| ![](docs/capturas/android_gestor_07_xml.png) | Visor XML con resaltado y formato |
-| ![](docs/capturas/android_gestor_08_texto_md.png) | Markdown renderizado |
-| ![](docs/capturas/android_gestor_09_imagen_zoom.png) | Imagen con controles de rotación y zoom |
-| ![](docs/capturas/android_gestor_10_metadatos.png) | Metadatos (la fecha de creación aparece como «No disponible») |
-| ![](docs/capturas/android_gestor_11_no_soportado.png) | Diálogo de formato no soportado (abrir, compartir, exportar) |
-| ![](docs/capturas/android_gestor_13_operaciones.png) | Confirmación antes de eliminar |
-| ![](docs/capturas/android_gestor_12_permiso_selector.png) | Explicación de la finalidad antes de abrir el selector del sistema |
+| ![](docs/capturas/android/android_gestor_01_inicio_azul_oscuro.png) | Inicio, tema **Azul**, modo oscuro |
+| ![](docs/capturas/android/android_gestor_02_inicio_guinda_oscuro.png) | Inicio, tema **Guinda**, modo oscuro |
+| ![](docs/capturas/android/android_gestor_03_inicio_azul_claro.png) | Inicio, tema **Azul**, modo claro |
+| ![](docs/capturas/android/android_gestor_05_breadcrumbs.png) | Breadcrumbs en Ejemplos |
+| ![](docs/capturas/android/android_gestor_06_json.png) | Visor JSON |
+| ![](docs/capturas/android/android_gestor_07_xml.png) | Visor XML |
+| ![](docs/capturas/android/android_gestor_08_texto_md.png) | Visor Markdown |
+| ![](docs/capturas/android/android_gestor_09_imagen_zoom.png) | Visor de imagen |
+| ![](docs/capturas/android/android_gestor_10_metadatos.png) | Metadatos |
+| ![](docs/capturas/android/android_gestor_11_no_soportado.png) | Formato no soportado |
+| ![](docs/capturas/android/android_gestor_13_operaciones.png) | Confirmación de eliminación |
+| ![](docs/capturas/android/android_gestor_12_permiso_selector.png) | Acceso a carpeta |
+| ![](docs/capturas/android/android_gestor_14_ajustes.png) | Ajustes |
 
 ### Parte 1: Gestor de archivos, iOS (simulador, iPad en horizontal)
 
@@ -150,7 +151,7 @@ Resultados reales hasta ahora (compilación y pruebas automatizadas):
 | Pruebas unitarias del gestor (21): resaltado, formato, Markdown, preferencias, operaciones de archivo, datos de ejemplo | JVM/Android host | Todas pasan |
 | Pruebas unitarias del juego (22): ida y vuelta TXT/XML/JSON, archivos vacíos, truncados y corruptos, lógica del juego, WAV | JVM/Android host | Todas pasan |
 
-**Aún sin verificar en ejecución real** (emulador, simulador o dispositivo): selectores de archivos (SAF y document picker), compartir/exportar, audio, vibración, gestos de zoom, persistencia de permisos y comportamiento sin conexión. La matriz de pruebas manual (SO, versión, dispositivo, pasos, esperado, obtenido, evidencia) se completará con las ejecuciones reales.
+**Aún sin verificar en ejecución real** (emulador, simulador o dispositivo): selectores de archivos (SAF y document picker), compartir/exportar, audio, vibración, gestos de zoom, persistencia de permisos y comportamiento sin conexión. La matriz de pruebas manual (SO, versión, dispositivo, pasos, esperado, obtenido, evidencia) requiere ejecuciones reales.
 
 ## Conclusiones
 
